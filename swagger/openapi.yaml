@@ -5,7 +5,16 @@ info:
     name: Apache 2.0
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   title: Parent Template Plugin
-  version: "${project.version}"
+  version: 1.0.0
 servers:
 - description: Plugin Endpoint URL
   url: https://jira.ru/rest/parent/1.0
+paths:
+  /example/getCurrentUser:
+    get:
+      operationId: getCurrentUser
+      responses:
+        default:
+          content:
+            '*/*': {}
+          description: default response

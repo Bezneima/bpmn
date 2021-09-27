@@ -8,13 +8,15 @@
     <!-- add our i18n resource -->
     <resource type="i18n" name="i18n" location="standarts"/>
 
-    <rest key="rest" path="/standarts" version="1.0" />
+    <rest key="rest" path="/bpmngen" version="1.0" />
 
-    <webwork1 key="standarts-example-page" class="java.lang.Object" roles-required="admin">
+
+    <webwork1 key="configuration-action" class="java.lang.Object" roles-required="admin">
         <actions>
-            <action name="ru.mail.jira.plugins.standarts.actions.ExampleAction" alias="example-page">
+            <action name="ru.mail.jira.plugins.standarts.controllers.TransitionsController" alias="example-page">
                 <view name="success">/templates/example-view.vm</view>
             </action>
         </actions>
     </webwork1>
+
 </atlassian-plugin>
