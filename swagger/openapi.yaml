@@ -10,9 +10,15 @@ servers:
 - description: Plugin Endpoint URL
   url: https://jira.ru/rest/parent/1.0
 paths:
-  /example/getCurrentUser:
+  /transitions/getCurrentTransitions/{key}:
     get:
       operationId: getCurrentUser
+      parameters:
+      - in: path
+        name: key
+        required: true
+        schema:
+          type: string
       responses:
         default:
           content:
