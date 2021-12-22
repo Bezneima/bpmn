@@ -1,5 +1,5 @@
 /* (C)2020 */
-package ru.mail.jira.plugins.standarts.actions;
+package ru.mail.jira.plugins.bpmn.actions;
 
 import com.atlassian.jira.web.action.JiraWebActionSupport;
 

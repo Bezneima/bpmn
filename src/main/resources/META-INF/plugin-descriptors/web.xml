@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <web>
-
+    <web-panel key="BPMN-generator-panel" location="atl.jira.view.issue.left.context" >
+        <label key="ru.mail.jira.plugins.bpmn.text"/>
+        <contentPresentConditions>false</contentPresentConditions>
+        <resource name="view" type="static"><![CDATA[<div id="BPMN-generator-panel-container">BPMN for task generate here.</div>]]></resource>
+        <context>atl.userprofile</context>
+    </web-panel>
 </web>

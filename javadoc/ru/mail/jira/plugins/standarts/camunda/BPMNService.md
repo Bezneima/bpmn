@@ -1,6 +1,6 @@
 Class BPMNService
 =================
-ru.mail.jira.plugins.standarts.camunda.BPMNService
+ru.mail.jira.plugins.bpmn.camunda.BPMNService
 Summary
 -------
 #### Constructors
@@ -8,11 +8,11 @@ Summary
 | ---------- | ------------- |
 | **public** | BPMNService() |
 #### Methods
-| Type and modifiers   | Method signature                                                                                                                | Return type  |
-| -------------------- | ------------------------------------------------------------------------------------------------------------------------------- | ------------ |
-| **protected static** | createElement(BpmnModelInstance modelInstance,BpmnModelElementInstance parentElement,String id,java.lang.Class<T> elementClass) | T            |
-| **public static**    | createSequenceFlow(BpmnModelInstance modelInstance,Process process,FlowNode from,FlowNode to)                                   | SequenceFlow |
-| **public static**    | main(java.lang.String[] args)                                                                                                   | void         |
+| Type and modifiers | Method signature                                                                                                           | Return type  |
+| ------------------ | -------------------------------------------------------------------------------------------------------------------------- | ------------ |
+| **public**         | generateTestBPMN()                                                                                                         | String       |
+| **protected**      | createElement(BpmnModelElementInstance parentElement,String id,java.lang.Class<T> elementClass,BpmnModelInstance instance) | T            |
+| **public**         | createSequenceFlow(Process process,FlowNode from,FlowNode to,BpmnModelInstance instance)                                   | SequenceFlow |
 
 Constructors
 ============
@@ -22,16 +22,16 @@ BPMNService ()
 
 Methods
 =======
-createElement (BpmnModelInstance, BpmnModelElementInstance, String, Class<T>)
+generateTestBPMN ()
+-------------------
+No method description provided
+
+createElement (BpmnModelElementInstance, String, Class<T>, BpmnModelInstance)
 -----------------------------------------------------------------------------
 No method description provided
 
-createSequenceFlow (BpmnModelInstance, Process, FlowNode, FlowNode)
+createSequenceFlow (Process, FlowNode, FlowNode, BpmnModelInstance)
 -------------------------------------------------------------------
-No method description provided
-
-main (String[])
----------------
 No method description provided
 
 

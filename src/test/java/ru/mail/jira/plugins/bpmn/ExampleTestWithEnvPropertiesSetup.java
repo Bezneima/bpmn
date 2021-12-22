@@ -1,5 +1,5 @@
 /* (C)2020 */
-package ru.mail.jira.plugins.standarts;
+package ru.mail.jira.plugins.bpmn;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 

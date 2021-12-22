@@ -1,4 +1,4 @@
-Package ru.mail.jira.plugins.standarts.camunda
+Package ru.mail.jira.plugins.bpmn.camunda
 ==============================================
 Classes
 =======

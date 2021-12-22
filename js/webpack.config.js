@@ -7,7 +7,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const { DuplicatesPlugin } = require('inspectpack/plugin');
 const WRM_DEPENDENCIES_CONFIG = require(`./wrm-dependencies-conf.js`);
 
-const PLUGIN_KEY = 'ru.mail.jira.plugins.standarts'; // current plugin key
+const PLUGIN_KEY = 'ru.mail.jira.plugins.bpmn'; // current plugin key
 const MVN_OUTPUT_DIR = path.join(__dirname, '..', 'target', 'classes'); // atlassian mvn plugin classes output
 const FRONTEND_SRC_DIR = path.join(__dirname, 'src'); // directory with all frontend sources
 const BUNDLE_OUTPUT_DIR_NAME = 'webpack_bundles'; // directory which contains all build resources (bundles)
@@ -18,14 +18,14 @@ const config = {
   target: 'web',
   context: FRONTEND_SRC_DIR, // directory where to look for all entries
   entry: {
-    'example-entry': [path.join(FRONTEND_SRC_DIR, 'index.tsx')], // build entry point
+    'bpmn': [path.join(FRONTEND_SRC_DIR, 'index.tsx')], // build entry point
   },
   module: {
     rules: [
       {
         // more info about ts-loader configuration here: https://github.com/TypeStrong/ts-loader
         test: /\.(ts|tsx)$/, // compiles all TypeScript files
-        use: ['ts-loader'], // TypeScript loader for webpack
+        use: ['babel-loader', 'ts-loader'], // TypeScript loader for webpack
         exclude: /node_modules/, // exludes node_modules directory
       },
     ],
@@ -37,7 +37,7 @@ const config = {
       pluginKey: PLUGIN_KEY, // current plugin key
       providedDependencies: WRM_DEPENDENCIES_CONFIG, // internal jira plugins web-resource dependencies
       contextMap: {
-        'example-entry': ['jira.browse.project'], // Specify in which web-resource context to include entrypoint resources
+        'bpmn': ['atl.general'], // Specify in which web-resource context to include entrypoint resources
       },
       verbose: false,
       xmlDescriptors: path.resolve(MVN_OUTPUT_DIR, 'META-INF', 'plugin-descriptors', 'wr-webpack-bundles.xml'), //An absolute filepath to where the generated XML should be output to
@@ -46,10 +46,11 @@ const config = {
     new WebpackBar(), // Elegant ProgressBar and Profiler for Webpack,
   ],
   externals: {
-    AJS: {
+    JIRA : "JIRA",
+    'AJS': {
       var: 'AJS',
     },
-    jquery: 'require("jquery")',
+    'jquery': 'require("jquery")',
     'wrm/context-path': 'require("wrm/context-path")',
     'jira/api/projects': 'require("jira/api/projects")',
     'wrm/format': 'AJS.format',
@@ -116,7 +117,7 @@ module.exports = (env, argv) => {
         terserOptions: {
           mangle: {
             // Don't mangle usage of I18n.getText() function
-            reserved: ['I18n', 'getText'], // Part of @atlassian/wrm-react-i18n configuration
+            reserved: ['i18n', 'getText'], // Part of @atlassian/wrm-react-i18n configuration
           },
           parallel: true, // runs all js minification tasks in parallel threads
           sourceMap: !devMode,

@@ -1,5 +1,5 @@
 /* (C)2021 */
-package ru.mail.jira.plugins.standarts.DTOs;
+package ru.mail.jira.plugins.bpmn.DTOs;
 
 import java.sql.Timestamp;
 

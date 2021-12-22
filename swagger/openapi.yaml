@@ -22,5 +22,23 @@ paths:
       responses:
         default:
           content:
-            '*/*': {}
+            '*/*':
+              schema:
+                type: string
+          description: default response
+  /transitions/test/{key}:
+    get:
+      operationId: justTestParticipant
+      parameters:
+      - in: path
+        name: key
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: string
           description: default response

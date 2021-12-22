@@ -1,5 +1,5 @@
 Project packages list
 =====================
-| Package                                                                                   |
-| ----------------------------------------------------------------------------------------- |
-| [ru.mail.jira.plugins.standarts.camunda](ru/mail/jira/plugins/standarts/camunda/Index.md) |
+| Package                                                                         |
+| ------------------------------------------------------------------------------- |
+| [ru.mail.jira.plugins.bpmn.camunda](ru/mail/jira/plugins/bpmn/camunda/Index.md) |
