@@ -9,7 +9,7 @@ mappings
     dependency: 'com.atlassian.plugins.jquery:jquery',
     import: {
       amd: 'jquery',
-      var: 'jQuery',
+      var: 'jquery',
     },
   })
   .set('aui/flag', {
